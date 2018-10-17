@@ -1,2 +1,0 @@
-class Cloudr::List
-end

@@ -10,4 +10,5 @@ end
 
 require_relative "cloudr/version"
 require_relative "cloudr/cli"
-require_relative "cloudr/list"
+require_relative "cloudr/track"
+require_relative "cloudr/scraper"
