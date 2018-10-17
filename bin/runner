@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "./lib/cloudr.rb"
+
+Cloudr::CLI.new.run
