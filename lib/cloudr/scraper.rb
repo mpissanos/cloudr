@@ -1,5 +1,6 @@
 
-class Scraper
+require 'pry'
+class Cloudr::Scraper
 
     def get_page
         Nokogiri::HTML(open("https://soundcloud.com/charts/new?genre=all-music&country=US"))
@@ -7,6 +8,7 @@ class Scraper
 
     def tracks_index
         self.get_page.css('ul.lazyLoadingList__list sc-list-nostyle sc-clearfix')
+        binding.pry
     end
 
     def make_tracks
