@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cloudr/version"
+require "duder/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cloudr"
-  spec.version       = Cloudr::VERSION
+  spec.name          = "duder"
+  spec.version       = Duder::VERSION
   spec.authors       = ["Manuel Pissanos"]
   spec.email         = ["mpissano@gmail.com"]
 
@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
   spec.add_dependency "nokogiri"
-  
+  spec.add_dependency "colorize"
 end

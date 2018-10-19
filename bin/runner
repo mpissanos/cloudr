@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "./lib/cloudr.rb"
+require "./lib/duder.rb"
 
-Cloudr::CLI.new.run
+Duder::Scraper.start
