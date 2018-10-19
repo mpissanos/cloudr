@@ -1,7 +1,7 @@
 class Duder::CLI
 
     def self.start
-        Duder::Scraper.scrape_page
+        Duder::Scraper.scrape_dude
         greet
         menu
     end
@@ -31,16 +31,26 @@ class Duder::CLI
         puts " 
         
         "
-        puts "What's up dudes?? welcome to Duder. To hear a totally meaningful quote from one of the dudes, choose your number below.."
+        puts "What's up dudes?? welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below.."
         puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".red
+
+        puts"
+         Oh yeah, whenever you want, you can just type \"exit\" to get out of here.. "
 
     end
 
     def self.menu
+        puts "
+        
+        "
         puts "1. Jeffrey \"The Dude\" Lebowski"
         puts "2. Jesus Quintana"
         puts "3. Walter Sobchak"
-        puts "Oh yeah, whenever you want, you can just type \"exit\" to get out of here.."
+        puts "4. Jeff Spicoli"
+        puts "5. Smoky"
+        puts "6. Slater"
+        
+        
         puts "=>".blink
 
         input = gets.strip.to_i
@@ -48,11 +58,11 @@ class Duder::CLI
      
     case
         when input == 1
-            puts lebowski_arr.random
+            puts quotes.lebowski_arr.random
         when input == 2
-            puts jesus_arr.random
-        when input == 3
-            puts walter_arr.random
+            puts quotes.jesus_arr.random
+        when input == 3 
+            puts quotes.walter_arr.random
         when input == "exit"
             puts "Far out, catch you later."
             exit
