@@ -15,6 +15,7 @@ class Duder::Scraper
             !if character.text.include?("Dialogue")
 
             Duder::Character.new(character.text)
+            end
         end
     end
 
@@ -30,9 +31,5 @@ class Duder::Scraper
         end
     end
 
-            
-           
-
-            
 end
  

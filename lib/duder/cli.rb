@@ -1,7 +1,8 @@
-class Cloudr::CLI
+class Duder::CLI
 
     def run
-        Cloudr::Scraper.scrape_page
+        Duder::Scraper.scrape_page
+        Duder::Text.banner
     end
 
 end
