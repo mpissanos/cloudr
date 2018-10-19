@@ -1,7 +1,8 @@
 class Duder::Text
 
     def self.banner
-        print "                                                   dddddddd                                        
+        print 
+        "                                                  dddddddd                                        
         DDDDDDDDDDDDD                                      d::::::d                                        
         D::::::::::::DDD                                   d::::::d                                        
         D:::::::::::::::DD                                 d::::::d                                        
@@ -18,6 +19,6 @@ class Duder::Text
         D:::::::::::::::DD    u:::::::::::::::u d:::::::::::::::::d e::::::::eeeeeeee   r:::::r            
         D::::::::::::DDD       uu::::::::uu:::u  d:::::::::ddd::::d  ee:::::::::::::e   r:::::r            
         DDDDDDDDDDDDD            uuuuuuuu  uuuu   ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr            
-                                                                                               "
+                                                                                               ".colorize(:light_blue)
     end
 end

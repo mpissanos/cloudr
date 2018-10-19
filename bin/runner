@@ -2,4 +2,4 @@
 
 require "./lib/duder.rb"
 
-Duder::Scraper.start
+Duder::CLI.start
