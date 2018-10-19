@@ -24,7 +24,7 @@ class Duder::CLI
         DDD:::::DDDDD:::::D  u:::::::::::::::uud::::::ddddd::::::dde::::::::e           r:::::r            
         D:::::::::::::::DD    u:::::::::::::::u d:::::::::::::::::d e::::::::eeeeeeee   r:::::r            
         D::::::::::::DDD       uu::::::::uu:::u  d:::::::::ddd::::d  ee:::::::::::::e   r:::::r            
-        DDDDDDDDDDDDD            uuuuuuuu  uuuu   ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr                "
+        DDDDDDDDDDDDD            uuuuuuuu  uuuu   ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr                ".red
     
     
     
@@ -32,7 +32,7 @@ class Duder::CLI
         
         "
         puts "What's up dudes?? welcome to Duder. To hear a totally meaningful quote from one of the dudes, choose your number below.."
-        puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>"
+        puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".red
 
     end
 
@@ -41,11 +41,12 @@ class Duder::CLI
         puts "2. Jesus Quintana"
         puts "3. Walter Sobchak"
         puts "Oh yeah, whenever you want, you can just type \"exit\" to get out of here.."
-        puts "=>"
+        puts "=>".blink
 
-        input = gets.strip
-    
-     case
+        input = gets.strip.to_i
+    #TODO fix issue of exit not owrking due to input being only integer
+     
+    case
         when input == 1
             puts lebowski_arr.random
         when input == 2
@@ -56,7 +57,9 @@ class Duder::CLI
             puts "Far out, catch you later."
             exit
         else
-            puts "That's like, not an option man... Try it again."
+            puts "
+            
+            That's like, not an option man... Try it again."
             return menu
         end
     end
