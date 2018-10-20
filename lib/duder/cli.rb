@@ -1,16 +1,26 @@
-require 'pry'
+
 class Duder::CLI
 
-    
-
     def run
-        Duder::Scraper.new
-        puts "RUNNING"
+        puts" Loading..."
+
+        Duder::Scraper.scrape_lebowski
+        Duder::Scraper.scrape_walter
+        Duder::Scraper.scrape_jesus
+        Duder::Scraper.scrape_spicoli
+        Duder::Scraper.scrape_slater
+
+        
+        welcome
         menu
-        choices
+        pick
+        again?
     end
+
+        
+        
    
-    def menu
+    def welcome
         print " 
                                                            dddddddd                                        
         DDDDDDDDDDDDD                                      d::::::d                                        
@@ -38,53 +48,70 @@ class Duder::CLI
         puts "What's up dudes?? welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below.."
         puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".red
 
-        puts"
-         Oh yeah, whenever you want, you can just type \"exit\" to get out of here.. "
-
-    
-
-    
         puts "
         
         "
-    def choices
+    end
+
+    def menu
+        puts "
+        "
 
         puts "1. Jeffrey \"The Dude\" Lebowski"
         puts "2. Jesus Quintana"
         puts "3. Walter Sobchak"
         puts "4. Jeff Spicoli"
         puts "5. Slater"
-        
-        
-        
+        puts "6. Exit"
+        puts " 
+        "
         puts "=>".blink
+    end
 
-        input = gets.chomp.to_i || "exit"
-    
-     
-    case
-        when input == 1
-            Duder::Character.generate_quote(1)
-         when input == 2
-            Duder::Character.generate_quote(2)
-        when input == 3 
-            Duder::Character.generate_quote(3)
-        when input == 4
-            Duder::Character.generate_quote(4)
-        when input = 5
-            Duder::Character.generate_quote(5)
-        when input == "exit"
-            puts "Far out, catch you later."
-            binding.pry
-            exit
+    def pick(input=nil)
+        input = gets.strip.to_i 
+        if input == 6
+            exit_prompt
         else
-            puts "
-            
-            That's like, not an option man... Try it again."
-        return choices
+        print_quote(input) 
+        puts" "
+        
+        return again?
+        
+        end
+        
+    end
+
+    def self.error_message
+        puts " That's like not an option man, try it again..."
+        return input
+    end
+
+    def print_quote(input)
+        if input == "exit"
+            exit_prompt
+        else
+        puts Duder::Character.quote_generator(input)
+        puts"
+
+        "
         end
     end
-end
+
+        
+    def self.exit_prompt
+            puts " Thanks for hanging\' Catch you later dudes....".red
+        exit
+    end
+    
+
+    def self.again?
+
+    puts " Wanna try another one?
+        "
+        return pick
+
+    end
 
 
 

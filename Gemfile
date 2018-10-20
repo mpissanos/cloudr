@@ -9,8 +9,4 @@ gem "nokogiri"
 gem "colorize"
 
 
-
-    gem 'pry' , group:"development"
-
-
 gemspec

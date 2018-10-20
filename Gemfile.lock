@@ -3,7 +3,6 @@ PATH
   specs:
     duder (0.1.0)
       colorize
-      nokogiri
 
 GEM
   remote: https://rubygems.org/

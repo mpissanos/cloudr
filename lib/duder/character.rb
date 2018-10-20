@@ -2,25 +2,18 @@ require 'pry'
 
 class Duder::Character
     
-    attr_accessor :characters, :char_hash
+    attr_accessor :char_hash, :char_array
 
-#A character has many quotes. eg. An array
-@@characters = []
+    @@char_array = []
 
     def initialize(character, array)
-
-        binding.pry
-
       @char_hash = { :name => character, :quotes => array } 
-      @@characters << @char_hash
+      @@char_array << @char_hash
     end
     
-    def self.save
-        @@characters << self
+    def self.quote_generator(input)
+        generate = @@char_array[input - 1][:quotes]
+        generate.sample
     end
-    
-    def self.generate_quote(input)
-        @@characters[input - 1][:quotes].value.sample
-    end
-binding.pry
+
   end

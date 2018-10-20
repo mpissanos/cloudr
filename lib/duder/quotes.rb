@@ -1,13 +1,14 @@
-# class Duder::Quotes
+# # class Duder::Quotes
 
-#     attr_accessor :name, :quote_array
+# #     attr_accessor :name, :quote_array
 
+# class Duder::QuoteGenerator 
     
-#     def initialize(attributes)
-
-     
+    
+#     def self.initialize(input)
+#         @char_hash[:quotes].value.sample
 #     end
-  
+    
         
     
 # end
