@@ -1,27 +1,13 @@
-class Duder::Quotes
+# class Duder::Quotes
 
-    attr_accessor :quote, :character
+#     attr_accessor :name, :quote_array
 
     
-    # @@all = []
-    # #An array of many quotes belong to a character
-    def initialize(character, quote_arr)
+#     def initialize(attributes)
+
      
-    end
-
-    def self.lebowski_arr
-        
-    end
-
-    def self.jesus_arr
-
-    end
-
-    def self.walter_arr
-
-    end
-
-        
+#     end
+  
         
     
-end
+# end

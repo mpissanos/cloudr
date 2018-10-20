@@ -1,11 +1,16 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|repo_name| 
+"https://github.com/#{repo_name}" }
 
-# Specify your gem's dependencies in cloudr.gemspec
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
-require 'colorize'
+# specify your gem dependencies in duder.gemspec
+
+gem "nokogiri"
+gem "colorize"
+
+
+
+    gem 'pry' , group:"development"
+
 
 gemspec

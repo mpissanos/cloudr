@@ -1,6 +1,6 @@
 class Duder::Text
 
-    def self.banner
+    def initialize
         print 
         "                                                  dddddddd                                        
         DDDDDDDDDDDDD                                      d::::::d                                        
