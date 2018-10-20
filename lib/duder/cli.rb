@@ -1,7 +1,6 @@
 class Duder::CLI
 
     def self.start
-        Duder::Scraper.scrape_dude
         greet
         menu
     end
@@ -39,40 +38,41 @@ class Duder::CLI
 
     end
 
-    def self.menu
-        puts "
+    # def self.menu
+    #     puts "
         
-        "
-        puts "1. Jeffrey \"The Dude\" Lebowski"
-        puts "2. Jesus Quintana"
-        puts "3. Walter Sobchak"
-        puts "4. Jeff Spicoli"
-        puts "5. Smoky"
-        puts "6. Slater"
+    #     "
+    #     puts "1. Jeffrey \"The Dude\" Lebowski"
+    #     puts "2. Jesus Quintana"
+    #     puts "3. Walter Sobchak"
+    #     puts "4. Jeff Spicoli"
+    #     puts "5. Smoky"
+    #     puts "6. Slater"
         
         
-        puts "=>".blink
+    #     puts "=>".blink
 
-        input = gets.strip.to_i
-    #TODO fix issue of exit not owrking due to input being only integer
+    #     input = gets.strip.to_i
+    # #TODO fix issue of exit not owrking due to input being only integer
      
-    case
-        when input == 1
-            puts quotes.lebowski_arr.random
-        when input == 2
-            puts quotes.jesus_arr.random
-        when input == 3 
-            puts quotes.walter_arr.random
-        when input == "exit"
-            puts "Far out, catch you later."
-            exit
-        else
-            puts "
+    # case
+    #     when input == 1
+    #         Scraper.scrape_lebowski
+    #         puts quotes.lebowski_arr.random
+    #     when input == 2
+    #         puts quotes.jesus_arr.random
+    #     when input == 3 
+    #         puts quotes.walter_arr.random
+    #     when input == "exit"
+    #         puts "Far out, catch you later."
+    #         exit
+    #     else
+    #         puts "
             
-            That's like, not an option man... Try it again."
-            return menu
-        end
-    end
+    #         That's like, not an option man... Try it again."
+    #         return menu
+    #     end
+    # end
 
 
 end

@@ -9,7 +9,7 @@ class Duder::Character
 
     def initialize(character)
        @character = character
-    
+    #{:Character => [quotes_array]}
     end
 
     def self.save

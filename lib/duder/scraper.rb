@@ -1,64 +1,55 @@
 require 'pry'
 class Duder::Scraper
 
+    attr_accessor :lebowski_arr, :walter_arr, :jesus_arr, :spicoli_arr, :slater_arr
+
     def self.scrape_lebowski
-        quote_arr = []
+        @lebowski_arr = []
         page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
         doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
+        doc.css('ul li b[0..8]').each do |quote|
+            @lebowski_arr << quote.text
         end
     end
          
 
-    def self.scrape_jesus
-        quote_arr = []
+    def self.scrape_walter
+        @walter_arr = []
         page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
         doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
+        doc.css('.ul li b[9..21]').each do |quote|
+            @walter_arr << quote.text
         end
     end
 
-    def self.scrape_walter
-        quote_arr = []
+    def self.scrape_jesus
+        @jesus_arr = []
         page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
         doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
+        doc.css('ul li b[22..26]').each do |quote|
+            @jesus_arr << quote.text
         end
     end
 
     def self.scrape_spicoli
-        quote_arr = []
-        page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
+        @spicoli_arr = []
+        page_url = 'https://quotecatalog.com/communicator/jeff-spicoli/'
         doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
+
+        doc.css('h3 a.quote__text').each do |quote|
+            @spicoli_arr << quote.text
         end
     end
+       
+    
 
-    def self.scrape_smokey
-        quote_arr = []
-        page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
-        doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
-        end
-    end
-
+ 
     def self.scrape_slater
-        quote_arr = []
-        page_url = 'https://en.wikiquote.org/wiki/The_Big_Lebowski'
+        @slater_arr = []
+        page_url = 'http://www.moviequotedb.com/movies/dazed-and-confused/character_666.html'
         doc = Nokogiri::HTML(open(page_url))
-        doc.css('.mw-headline').each do |quote|
-            quote_arr << quote
-            Duder::Character.new(character.text, quote_arr)
+        doc.css('div.padded#quote').each do |quote|
+            @slater_arr << quote.text
         end
     end
          
