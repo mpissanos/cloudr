@@ -16,4 +16,16 @@ class Duder::Character
         generate.sample
     end
 
+    def self.all
+      @@charr_array
+    end
+
+    def self.list_quotes_by_character
+      @@char_array[self]
+    end
+
+
+
+
+
   end
