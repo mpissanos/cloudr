@@ -78,7 +78,7 @@ class Duder::CLI
         print_quote(input) 
         puts" "
         else
-            error_message
+         error_message
         end
     end
         
@@ -94,9 +94,8 @@ class Duder::CLI
             exit_prompt
         else
         puts Duder::Character.quote_generator(input)
-        puts"
+        puts" "
 
-        "
         end
     end
 
