@@ -45,7 +45,7 @@ class Duder::CLI
         puts " 
         
         "
-        puts "What's up dudes?? welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below.."
+        puts "What's up dudes?? Welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below.."
         puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".red
 
         puts "
@@ -68,19 +68,21 @@ class Duder::CLI
         puts "=>".blink
     end
 
+    
+
     def pick(input=nil)
         input = gets.strip.to_i 
         if input == 6
             exit_prompt
-        else
+        elsif (1..5).include?(input)
         print_quote(input) 
         puts" "
-        
-        return again?
-        
+        else
+            error_message
         end
-        
     end
+        
+    
 
     def self.error_message
         puts " That's like not an option man, try it again..."
