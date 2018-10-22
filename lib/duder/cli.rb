@@ -1,7 +1,7 @@
 
 class Duder::CLI
 
-    def run
+    def initialize
         puts" Loading..."
 
         Duder::Scraper.scrape_lebowski
@@ -9,12 +9,8 @@ class Duder::CLI
         Duder::Scraper.scrape_jesus
         Duder::Scraper.scrape_spicoli
         Duder::Scraper.scrape_slater
-
-        
         welcome
-        menu
-        pick
-        again?
+
     end
 
         
@@ -51,9 +47,15 @@ class Duder::CLI
         puts "
         
         "
+        
+        menu
     end
 
+
+
     def menu
+        input = nil
+        while input != 6
         puts "
         "
 
@@ -66,54 +68,33 @@ class Duder::CLI
         puts " 
         "
         puts "=>".blink
-    end
-
-    
-
-    def pick(input=nil)
+        
         input = gets.strip.to_i 
+        
         if input == 6
-            exit_prompt
+            puts " Thanks for hanging\' Catch you later dudes....".red
+            exit
         elsif (1..5).include?(input)
-        print_quote(input) 
-        puts" "
+            print_quote(input) 
+            puts" "
         else
-         error_message
+            error_message
+            menu
         end
     end
-        
+end
     
 
-    def self.error_message
+
+    
+
+    def error_message
         puts " That's like not an option man, try it again..."
-        return input
     end
 
     def print_quote(input)
-        if input == "exit"
-            exit_prompt
-        else
-        puts Duder::Character.quote_generator(input)
-        puts" "
-
-        end
+       puts  Duder::Character.quote_generator(input).red
     end
-
-        
-    def self.exit_prompt
-            puts " Thanks for hanging\' Catch you later dudes....".red
-        exit
-    end
-    
-
-    def self.again?
-
-    puts " Wanna try another one?
-        "
-        return pick
-
-    end
-
 
 
 end
