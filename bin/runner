@@ -2,4 +2,4 @@
 
 require "./lib/duder.rb"
 
-Duder::CLI.new.run
+Duder::CLI.new

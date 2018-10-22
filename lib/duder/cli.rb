@@ -1,4 +1,4 @@
-
+require 'rainbow'
 class Duder::CLI
 
     def initialize
@@ -34,15 +34,15 @@ class Duder::CLI
         DDD:::::DDDDD:::::D  u:::::::::::::::uud::::::ddddd::::::dde::::::::e           r:::::r            
         D:::::::::::::::DD    u:::::::::::::::u d:::::::::::::::::d e::::::::eeeeeeee   r:::::r            
         D::::::::::::DDD       uu::::::::uu:::u  d:::::::::ddd::::d  ee:::::::::::::e   r:::::r            
-        DDDDDDDDDDDDD            uuuuuuuu  uuuu   ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr                ".red
+        DDDDDDDDDDDDD            uuuuuuuu  uuuu   ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr                ".green
     
     
     
         puts " 
         
         "
-        puts "What's up dudes?? Welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below.."
-        puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".red
+        puts "What's up dudes?? Welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below..".white
+        puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".green
 
         puts "
         
@@ -59,15 +59,15 @@ class Duder::CLI
         puts "
         "
 
-        puts "1. Jeffrey \"The Dude\" Lebowski"
-        puts "2. Jesus Quintana"
-        puts "3. Walter Sobchak"
-        puts "4. Jeff Spicoli"
-        puts "5. Slater"
-        puts "6. Exit"
+        puts "1. Jeffrey \"The Dude\" Lebowski".white
+        puts "2. Jesus Quintana".white
+        puts "3. Walter Sobchak".white
+        puts "4. Jeff Spicoli".white
+        puts "5. Slater".white
+        puts "6. Exit".red
         puts " 
         "
-        puts "=>".blink
+        puts "=>".blink.green
         
         input = gets.strip.to_i 
         
@@ -89,11 +89,11 @@ end
     
 
     def error_message
-        puts " That's like not an option man, try it again..."
+        puts " That's like not an option man, try it again...".green
     end
 
     def print_quote(input)
-       puts  Duder::Character.quote_generator(input).red
+       Duder::Character.quote_generator(input)
     end
 
 

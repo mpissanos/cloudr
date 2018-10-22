@@ -12,8 +12,10 @@ class Duder::Character
     end
     
     def self.quote_generator(input)
-        generate = @@char_array[input - 1][:quotes]
-        generate.sample
+        character = @@char_array[input - 1][:name]
+        character_quote = @@char_array[input - 1][:quotes].sample
+        puts "#{character}".green
+        puts  "#{character_quote}".green
     end
 
     def self.all
@@ -23,9 +25,4 @@ class Duder::Character
     def self.list_quotes_by_character
       @@char_array[self]
     end
-
-
-
-
-
-  end
+end
