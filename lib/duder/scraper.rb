@@ -15,7 +15,7 @@ class Duder::Scraper
             @lebowski_arr << quote.text
             @lebowski_quotes = @lebowski_arr[8..15]
         end
-        Duder::Character.new('Jeffrey \'The Dude\' Lebowski', @lebowski_quotes)
+        Duder::Character.new('Jeffrey \'The Dude\' Lebowski', @lebowski_quotes, page_url)
         
     end
   
@@ -28,7 +28,7 @@ class Duder::Scraper
             @walter_arr << quote.text
             @walter_quotes = @walter_arr[19..28]
         end
-        Duder::Character.new('Walter Sobchak', @walter_quotes)
+        Duder::Character.new('Walter Sobchak', @walter_quotes, page_url)
     end
    
     def self.scrape_jesus
@@ -39,7 +39,7 @@ class Duder::Scraper
             @jesus_arr << quote.text
             @jesus_quotes = @jesus_arr[29..32]
         end
-        Duder::Character.new("Jesus Quintana", @jesus_quotes)
+        Duder::Character.new("Jesus Quintana", @jesus_quotes, page_url)
     end
 
     def self.scrape_spicoli
@@ -50,7 +50,7 @@ class Duder::Scraper
             @spicoli_arr << quote.text
             @spicoli_quotes = @spicoli_arr
         end
-        Duder::Character.new('Jeffrey Spicoli', @spicoli_quotes)
+        Duder::Character.new('Jeffrey Spicoli', @spicoli_quotes, page_url)
     end
        
     # def self.scrape_slater
@@ -61,7 +61,7 @@ class Duder::Scraper
     #         @slater_arr << quote.text
     #         @slater_quotes = @slater_arr
     #     end
-    #     Duder::Character.new('Slater', @slater_quotes)
+    #     Duder::Character.new('Slater', @slater_quotes, page_url)
     # end
          
 end

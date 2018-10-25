@@ -77,10 +77,36 @@ class Duder::CLI
             elsif (1..5).include?(input)
                 Duder::Character.quote_generator(input)
                 puts" "
+                sub_menu(input)
             else
                 puts " That's like not an option man, try it again...".green
             end
-            menu
+        
         end
     end
+
+    def sub_menu(sub_input)
+        input = nil
+        while input != 3
+
+        puts "1. Get more more info"
+        puts "2. Go back menu"
+        puts "3. EXIT"
+
+        input = gets.strip.to_i
+
+            if input == 3
+                puts " Thanks for hanging\' Catch you later dudes....".green
+                exit
+            elsif input == 1
+              character =  Duder::Character.all[sub_input - 1] 
+              puts character.url
+            elsif input == 2
+                menu
+            else
+                puts " That's like not an option man, try it again...".green
+            end
+        end
+    end
+
 end
