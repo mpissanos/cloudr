@@ -60,8 +60,8 @@ class Duder::CLI
         "
 
         puts "1. Jeffrey \"The Dude\" Lebowski".white
-        puts "2. Jesus Quintana".white
-        puts "3. Walter Sobchak".white
+        puts "2. Walter Sobchak".white
+        puts "3. Jesus Quintana".white
         puts "4. Jeff Spicoli".white
         puts "5. Slater".white
         puts "6. EXIT"
