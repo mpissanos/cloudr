@@ -14,15 +14,20 @@ class Duder::Character
     def self.quote_generator(input)
         character = @@char_array[input - 1][:name]
         character_quote = @@char_array[input - 1][:quotes].sample
-        puts "#{character}".green
-        puts  "#{character_quote}".green
+        puts  "'#{character_quote}'".green
+        puts "-#{character}".cyan
     end
 
     def self.all
       @@charr_array
     end
 
-    def self.list_quotes_by_character
-      @@char_array[self]
+    def self.list_quotes_by_character(input)
+      @@char_array[input-1][:name][:quotes]
     end
+
+    def self.random(input)
+      @@charr_array[input.sample][:quotes].first
+    end
+
 end

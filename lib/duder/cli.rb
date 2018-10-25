@@ -2,13 +2,13 @@ require 'rainbow'
 class Duder::CLI
 
     def initialize
-        puts" Loading..."
+        puts" Loading...".blue
 
         Duder::Scraper.scrape_lebowski
         Duder::Scraper.scrape_walter
         Duder::Scraper.scrape_jesus
         Duder::Scraper.scrape_spicoli
-        Duder::Scraper.scrape_slater
+        # Duder::Scraper.scrape_slater
         welcome
 
     end
@@ -64,37 +64,23 @@ class Duder::CLI
         puts "3. Walter Sobchak".white
         puts "4. Jeff Spicoli".white
         puts "5. Slater".white
-        puts "6. Exit".red
+        puts "6. EXIT"
         puts " 
         "
         puts "=>".blink.green
         
         input = gets.strip.to_i 
         
-        if input == 6
-            puts " Thanks for hanging\' Catch you later dudes....".red
-            exit
-        elsif (1..5).include?(input)
-            print_quote(input) 
-            puts" "
-        else
-            error_message
+            if input == 6
+                puts " Thanks for hanging\' Catch you later dudes....".green
+                exit
+            elsif (1..5).include?(input)
+                Duder::Character.quote_generator(input)
+                puts" "
+            else
+                puts " That's like not an option man, try it again...".green
+            end
             menu
         end
     end
-end
-    
-
-
-    
-
-    def error_message
-        puts " That's like not an option man, try it again...".green
-    end
-
-    def print_quote(input)
-       Duder::Character.quote_generator(input)
-    end
-
-
 end

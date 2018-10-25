@@ -53,16 +53,16 @@ class Duder::Scraper
         Duder::Character.new('Jeffrey Spicoli', @spicoli_quotes)
     end
        
-    def self.scrape_slater
-        @slater_arr = []
-        @page_url = 'https://theiapolis.com/movie-0USQ/dazed-and-confused/quotes/ron-slater.html'
-        doc = Nokogiri::HTML(open('https://theiapolis.com/movie-0USQ/dazed-and-confused/quotes/ron-slater.html'))
-        doc.css('blockquote').each do |quote|
-            @slater_arr << quote.text
-            @slater_quotes = @slater_arr
-        end
-        Duder::Character.new('Slater', @slater_quotes)
-    end
+    # def self.scrape_slater
+    #     @slater_arr = []
+    #     @page_url = 'https://theiapolis.com/movie-0USQ/dazed-and-confused/quotes/ron-slater.html'
+    #     doc = Nokogiri::HTML(open('https://theiapolis.com/movie-0USQ/dazed-and-confused/quotes/ron-slater.html'))
+    #     doc.css('blockquote').each do |quote|
+    #         @slater_arr << quote.text
+    #         @slater_quotes = @slater_arr
+    #     end
+    #     Duder::Character.new('Slater', @slater_quotes)
+    # end
          
 end
  
