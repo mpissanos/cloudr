@@ -93,11 +93,12 @@ class Duder::CLI
              "
         puts "1. Get more more info"
         puts "2. Go back to main menu"
-        puts "3. EXIT"
+        puts "3. Another one?"
+        puts "4. EXIT"
 
         input = gets.strip.to_i
 
-            if input == 3
+            if input == 4
                 puts " Thanks for hanging\' Catch you later dudes....".green
                 exit
             elsif input == 1
@@ -105,6 +106,10 @@ class Duder::CLI
                 puts character.url.red
             elsif input == 2
                 menu
+            elsif input == 3
+                Duder::Character.quote_generator(input)
+                puts" "
+                sub_menu(input)
             else
                 puts " That's like not an option man, try it again...".green
             end

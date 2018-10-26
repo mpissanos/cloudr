@@ -2,7 +2,7 @@ require 'pry'
 
 class Duder::Scraper
 
-    attr_accessor :lebowski_arr, :walter_arr, :jesus_arr, :spicoli_arr, :slater_arr, :page_url
+    attr_accessor :lebowski_arr, :walter_arr, :jesus_arr, :spicoli_arr, :slater_arr, 
     
     
     
