@@ -24,12 +24,5 @@ class Duder::Character
       @@char_array
     end
 
-    def self.list_quotes_by_character(input)
-      @@char_array[input-1].name.quotes
-    end
-
-    def self.random(input)
-      @@char_array.quotes.sample
-    end
 
 end

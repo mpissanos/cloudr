@@ -64,7 +64,7 @@ class Duder::CLI
         puts "3. Jesus Quintana".white
         puts "4. Jeff Spicoli".white
         puts "5. Slater".white
-        puts "6. EXIT"
+        puts "6. EXIT".red
         puts " 
         "
         puts "=>".blink.green
@@ -74,6 +74,7 @@ class Duder::CLI
             if input == 6
                 puts " Thanks for hanging\' Catch you later dudes....".green
                 exit
+            
             elsif (1..5).include?(input)
                 Duder::Character.quote_generator(input)
                 puts" "
@@ -91,7 +92,7 @@ class Duder::CLI
         puts " 
              "
         puts "1. Get more more info"
-        puts "2. Go back menu"
+        puts "2. Go back to main menu"
         puts "3. EXIT"
 
         input = gets.strip.to_i
@@ -100,9 +101,8 @@ class Duder::CLI
                 puts " Thanks for hanging\' Catch you later dudes....".green
                 exit
             elsif input == 1
-              character =  Duder::Character.all[sub_input - 1] 
-
-              puts character.url.red
+                character =  Duder::Character.all[sub_input - 1] 
+                puts character.url.red
             elsif input == 2
                 menu
             else
