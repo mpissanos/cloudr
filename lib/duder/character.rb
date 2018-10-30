@@ -2,7 +2,7 @@ require 'pry'
 
 class Duder::Character
     
-    attr_accessor :name, :quotes, :url, :character, :character_quote
+    attr_accessor :name, :quotes, :url, :char, :char_quote
 
     @@char_array = []
 
@@ -14,10 +14,10 @@ class Duder::Character
     end
   
     def self.quote_generator(input)
-      character = @@char_array[input - 1].name
-      character_quote = @@char_array[input - 1].quotes.sample
-      puts  "'#{character_quote}'".green
-      puts "-#{character}".cyan
+      char = @@char_array[input - 1].name
+      char_quote = @@char_array[input - 1].quotes.sample
+      puts  "'#{char_quote}'".green
+      puts "-#{char}".cyan
     end
 
     def self.all
