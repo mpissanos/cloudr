@@ -1,6 +1,8 @@
 require 'rainbow'
 class Duder::CLI
 
+    attr_accessor :rand_input, :character
+
     def initialize
         puts" Loading...".blue
 
@@ -8,7 +10,7 @@ class Duder::CLI
         Duder::Scraper.scrape_walter
         Duder::Scraper.scrape_jesus
         Duder::Scraper.scrape_spicoli
-        # Duder::Scraper.scrape_slater
+         #Duder::Scraper.scrape_slater
         welcome
 
     end
@@ -18,7 +20,7 @@ class Duder::CLI
    
     def welcome
         print " 
-                                                           dddddddd                                        
+                                                           dddddddd                                          
         DDDDDDDDDDDDD                                      d::::::d                                        
         D::::::::::::DDD                                   d::::::d                                        
         D:::::::::::::::DD                                 d::::::d                                        
@@ -64,14 +66,15 @@ class Duder::CLI
         puts "3. Jesus Quintana".white
         puts "4. Jeff Spicoli".white
         puts "5. Slater".white
-        puts "6. EXIT".red
+        puts "6. Feeling Lucky? (random)"
+        puts "7. EXIT".red
         puts " 
         "
         puts "=>".blink.green
         
         input = gets.strip.to_i 
         
-            if input == 6
+            if input == 7
                 puts " Thanks for hanging\' Catch you later dudes....".green
                 exit
             
@@ -79,6 +82,11 @@ class Duder::CLI
                 Duder::Character.quote_generator(input)
                 puts" "
                 sub_menu(input)
+            elsif input == 6
+                @rand_input = rand(1..5)
+                Duder::Character.quote_generator(rand_input)
+                puts " "
+                sub_menu(rand_input)
             else
                 puts " That's like not an option man, try it again...".green
             end
@@ -87,33 +95,29 @@ class Duder::CLI
     end
 
     def sub_menu(sub_input)
+       
         input = nil
-        while input != 3
         puts " 
              "
         puts "1. Get more more info"
         puts "2. Go back to main menu"
-        puts "3. Another one?"
-        puts "4. EXIT"
+        puts "3. EXIT"
 
         input = gets.strip.to_i
 
-            if input == 4
+            if input == 3
                 puts " Thanks for hanging\' Catch you later dudes....".green
                 exit
             elsif input == 1
-                character =  Duder::Character.all[sub_input - 1] 
+                @character =  Duder::Character.all[sub_input - 1] 
                 puts character.url.red
+                menu
             elsif input == 2
                 menu
-            elsif input == 3
-                Duder::Character.quote_generator(input)
-                puts" "
-                sub_menu(input)
             else
                 puts " That's like not an option man, try it again...".green
             end
         end
-    end
+    
 
 end
