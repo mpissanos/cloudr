@@ -43,7 +43,13 @@ class Duder::CLI
         puts " 
         
         "
-        puts "What's up dudes?? Welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below..".white
+
+        puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>
+        
+        ".green
+        puts "What's up dudes?? Welcome to Duder. To hear a quote from one of the world's greatest dudes, choose your number below..
+        
+        ".white
         puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><><>><><><><><><><><><><><><>".green
 
         puts "
